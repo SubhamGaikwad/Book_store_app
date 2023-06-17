@@ -19,12 +19,15 @@ const Cart = () => {
               <div>
                 <h3>{book.title}</h3>
               </div>
-              <div>
+              <div className="book-image">
                 <img src={book.image_url} alt="#" />
               </div>
               <div>
                 {cartChecker(book.id) ? (
-                  <button onClick={() => removeFromCart(book.id)}>
+                  <button
+                    className="cart-button"
+                    onClick={() => removeFromCart(book.id)}
+                  >
                     Remove from Cart
                   </button>
                 ) : (
