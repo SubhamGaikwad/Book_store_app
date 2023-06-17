@@ -3,13 +3,13 @@ import "../App.css";
 import { API_URL } from "../API";
 import axios from "axios";
 import { useAppContext } from "./context/appContext";
-
+import { useNavigate } from "react-router";
 const BookList = () => {
   const [books, setBooks] = useState([]);
 
   const { cart, addToCart, removeFromCart } = useAppContext();
 
-  console.log("cart", cart);
+  const navigate = useNavigate();
 
   const cartChecker = (id) => {
     const boolean = cart.some((book) => book.id === id);
@@ -35,7 +35,11 @@ const BookList = () => {
               <h3>{book.title}</h3>
             </div>
             <div>
-              <img src={book.image_url} alt="#" />
+              <img
+                src={book.image_url}
+                alt="#"
+                onClick={() => navigate(`/books/${book.id}`)}
+              />
             </div>
             <div>
               {cartChecker(book.id) ? (

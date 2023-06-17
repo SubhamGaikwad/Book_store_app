@@ -73,3 +73,20 @@ button:hover{
   justify-items: center;
 
 }
+.book-details{
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* text-align: center; */
+  padding: 10px;
+  margin: 10px;
+}
+.book-description{
+  margin: 0 10px;
+}
+.book-img{
+  margin: 0 5px;
+
+}
