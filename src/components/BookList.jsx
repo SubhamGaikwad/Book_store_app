@@ -2,9 +2,19 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { API_URL } from "../API";
 import axios from "axios";
+import { useAppContext } from "./context/appContext";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
+
+  const { cart, addToCart, removeFromCart } = useAppContext();
+
+  console.log("cart", cart);
+
+  const cartChecker = (id) => {
+    const boolean = cart.some((book) => book.id === id);
+    return boolean;
+  };
 
   useEffect(() => {
     axios
@@ -22,13 +32,19 @@ const BookList = () => {
         return (
           <div key={book.id} className="book">
             <div>
-              <h2>{book.title}</h2>
+              <h3>{book.title}</h3>
             </div>
             <div>
               <img src={book.image_url} alt="#" />
             </div>
             <div>
-              <button>Add to Cart</button>
+              {cartChecker(book.id) ? (
+                <button onClick={() => removeFromCart(book.id)}>
+                  Remove from Cart
+                </button>
+              ) : (
+                <button onClick={() => addToCart(book)}>Add to Cart</button>
+              )}
             </div>
           </div>
         );

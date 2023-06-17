@@ -34,6 +34,10 @@ img{
   height: 300px;
   width: 300px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+img:hover{
+  transform: scale(1.1);
 }
 .book{
   text-align: center;
@@ -41,13 +45,17 @@ img{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 20px 0;
 
 }
 button{
   background: black;
-  color: white;
+  color: hsl(0, 52%, 95%);
   padding: 10px;
   border-radius: 5px;
-  width: 100%;
+  width: 300px;
   cursor: pointer;
+}
+button:hover{
+  transform: scale(1.1);
 }
