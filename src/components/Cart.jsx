@@ -1,8 +1,11 @@
 import React from "react";
 import "../App.css";
 import { useAppContext } from "./context/appContext";
+import { useNavigate } from "react-router";
 const Cart = () => {
   const { cart, addToCart, removeFromCart } = useAppContext();
+
+  const navigate = useNavigate();
 
   console.log("cart", cart);
 
@@ -20,7 +23,11 @@ const Cart = () => {
                 <h3>{book.title}</h3>
               </div>
               <div className="book-image">
-                <img src={book.image_url} alt="#" />
+                <img
+                  src={book.image_url}
+                  alt="#"
+                  onClick={() => navigate(`/books/${book.id}`)}
+                />
               </div>
               <div>
                 {cartChecker(book.id) ? (

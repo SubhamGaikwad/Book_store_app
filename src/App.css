@@ -49,6 +49,9 @@
   justify-items: center;
   gap: 20px;
 }
+.image-des{
+  margin-top: 50px;
+}
 
 img {
   height: 300px;
@@ -59,6 +62,7 @@ img {
   font-family: Helvetica,Arial,sans-serif;
     flex: 1;
     overflow-x: hidden;
+   
 
 }
 
@@ -138,10 +142,20 @@ button:hover {
 
 .book-description {
   margin: 0 10px;
+ 
+  text-align: center;
+  align-items: center;
 }
 
 .book-img {
   margin: 0 5px;
+  margin-top: 50px;
+}
+.place-order{
+  color: green;
+  box-sizing: border-box;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 input {
@@ -189,6 +203,7 @@ input {
   img {
     height: 200px;
     width: 200px;
+    
   }
 }
 
