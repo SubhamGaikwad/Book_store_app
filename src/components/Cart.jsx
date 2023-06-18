@@ -38,7 +38,7 @@ const Cart = () => {
           );
         })
       ) : (
-        <h1>You dont have any books Yet!</h1>
+        <h1 className="cart-text">You dont have any books Yet!</h1>
       )}
     </div>
   );

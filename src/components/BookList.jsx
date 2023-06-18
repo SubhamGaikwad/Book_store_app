@@ -1,65 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import "../App.css";
-// import { API_URL } from "../API";
-// import axios from "axios";
-// import { useAppContext } from "./context/appContext";
-// import { useNavigate } from "react-router";
-
-// const BookList = () => {
-//   const [books, setBooks] = useState([]);
-
-//   const { cart, addToCart, removeFromCart } = useAppContext();
-
-//   const navigate = useNavigate();
-
-//   const cartChecker = (id) => {
-//     const boolean = cart.some((book) => book.id === id);
-//     return boolean;
-//   };
-
-//   useEffect(() => {
-//     axios
-//       .get(API_URL)
-//       .then((res) => {
-//         console.log(res.data);
-//         setBooks(res.data);
-//       })
-//       .catch((err) => console.log(err));
-//   }, []);
-
-//   return (
-//     <div className="book-list">
-//       {books.map((book) => {
-//         return (
-//           <div key={book.id} className="book">
-//             <div>
-//               <h3>{book.title}</h3>
-//             </div>
-//             <div>
-//               <img
-//                 src={book.image_url}
-//                 alt="#"
-//                 onClick={() => navigate(`/books/${book.id}`)}
-//               />
-//             </div>
-//             <div>
-//               {cartChecker(book.id) ? (
-//                 <button onClick={() => removeFromCart(book.id)}>
-//                   Remove from Cart
-//                 </button>
-//               ) : (
-//                 <button onClick={() => addToCart(book)}>Add to Cart</button>
-//               )}
-//             </div>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// export default BookList;
-
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { API_URL } from "../API";
@@ -102,6 +40,14 @@ const BookList = () => {
 
   return (
     <div>
+      <div>
+        <img
+          className="img-poster"
+          // src="https://media.istockphoto.com/id/907919948/photo/2-story-book-shelf-in-bookstore.jpg?s=2048x2048&w=is&k=20&c=qLTQj2KdA-2iZLnY4g5Y1wQiQprIcdpAGL1nDXlOuwM="
+          src="https://images.unsplash.com/photo-1508161773455-3ada8ed2bbec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9zdGVyfGVufDB8fDB8fHww&w=1000&q=80"
+          alt="book_poster"
+        />
+      </div>
       <div className="book-search">
         <input
           type="text"
@@ -131,7 +77,8 @@ const BookList = () => {
               ) : (
                 <div>
                   <button onClick={() => addToCart(book)}>Add to Cart</button>
-                  <button>place order</button>
+
+                  <button>Buy now</button>
                 </div>
               )}
             </div>
